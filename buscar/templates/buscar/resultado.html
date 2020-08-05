@@ -1,0 +1,17 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/buscar.css' %}">
+<p>You searched for: <strong>{{ query }}</strong></p>
+
+{% if videos %}
+	<ul>
+    	{% for vide in videos.all %}
+    	<!-- Falata la columna del nombre 
+    	<li>Nombre: {{ vide.fichero }}</li> -->
+    	<li>Ruta: {{ vide.fichero }}</li>
+    	<li>Tamaño: {{ vide.tamanno }}</li>
+    	{% endfor %}
+	</ul>
+	<p>Found {{ videos|length }} video{{ videos|pluralize }}.</p>
+{% else %}
+	<p>No videos matched your search criteria.</p>
+{% endif %}

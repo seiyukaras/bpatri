@@ -1,0 +1,18 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/buscar.css' %}">
+<div class="container">
+
+ 
+  <div class="cover">
+    <h1>Busque el video en el servidor de Patrimonio.</h1>
+    <form  class="flex-form" method="post" action="{% url 'resultado' %}">{% csrf_token %}
+      
+      <label for="from">
+        <i class="ion-location"></i>
+      </label>
+      <input name="q" value="" type="search" placeholder="Historias entre Montañas" >
+      <input type="submit" value="Buscar">
+    </form>
+   </div>
+
+</div>
