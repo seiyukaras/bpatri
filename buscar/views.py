@@ -11,9 +11,9 @@ def buscar(request):
 
 def resultado(request):
     if request.POST:
-        q = request.POST['q']
+        q = request.POST['search']
         # Aqui cambie el nombre ya que hace referencia al modelo
-        videos = buscado.objects.filter(fichero__icontains=q)
+        videos = buscado.objects.filter(nombre__icontains=q)
         return render(request, 'buscar/resultado.html', {'videos': videos, 'query': q})
     else:
         return HttpResponse('Por favor envíe un mombre valido.')

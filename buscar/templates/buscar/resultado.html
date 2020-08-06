@@ -1,17 +1,31 @@
 {% load static %}
-<link rel="stylesheet" href="{% static 'css/buscar.css' %}">
-<p>You searched for: <strong>{{ query }}</strong></p>
-
-{% if videos %}
-	<ul>
+<link rel="stylesheet" href="{% static 'css/resultado.css' %}">
+<div class="s130">
+      <form class="inner-form">
+        <span class="info"><h3>Servidor de busqueda de Patrimonio</h3></span>
+        <div class="inner-form">
+          <div class="input-field first-wrap">
+            <div class="svg-wrapper">
+            </div>
+            {{ query }}
+          </div>
+        </div>
+          {% if videos %}
+        <span class="info"><p>Encontrado {{ videos|length }} video{{ videos|pluralize }}</p></span>
+          <ul>
     	{% for vide in videos.all %}
-    	<!-- Falata la columna del nombre 
-    	<li>Nombre: {{ vide.fichero }}</li> -->
-    	<li>Ruta: {{ vide.fichero }}</li>
+    	<!-- Falata la columna del nombre  -->
+        <li>Nombre:{{ vide.nombre }}<br></li>
+    	<li>Ruta:{{ vide.fichero }}</li>
+        <li>Formato:{{ vide.formato }}</li>
     	<li>Tamaño: {{ vide.tamanno }}</li>
     	{% endfor %}
 	</ul>
-	<p>Found {{ videos|length }} video{{ videos|pluralize }}.</p>
-{% else %}
-	<p>No videos matched your search criteria.</p>
+	{% else %}
+     <div class="inner-form">
+	<span class="info">El video que busca no esta en el servidor de patrimonio, favor de diriguirse a la direccion.<br>Envie un correo a jorge.cabrera@teleturquino.icrt.cu</span>
+    </div>
+    </div>
 {% endif %}
+      </form>
+    </div>
