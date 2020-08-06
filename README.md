@@ -8,3 +8,4 @@ Buscador de videos de varios qnat de almacenamiento en red Proyecto de Patrimoni
 # Lo que se quiere!
 
   - Indexar todos los videos que existan en los almacenamientos para tener un control de los mismos ademas de poder visualizarlos
+  - De igual forma poder hacerle un pedido a patrominio del video encontraro para su posterior tratamiendo en edicion
